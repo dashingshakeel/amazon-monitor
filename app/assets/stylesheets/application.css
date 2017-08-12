@@ -13,9 +13,20 @@
  *= require_tree .
  *= require_self
  */
-.new_user{
+.new{
   width: 300px;
   margin-left: 300px;
+  
+} 
+.table{
+  width: 400px;
+  float: left;
+  margin-right: 50px;
+}
+.newy{
+  width: 300px;
+  margin-left: 300px;
+  display: none;
 }
 *{
   magin: 0 auto;

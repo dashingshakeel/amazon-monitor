@@ -9,7 +9,11 @@
     </section>
   </aside>
 </div>
+      <%= render 'shared/item_form' ,item: @item %>
+      <div class="items"> <%= render 'shared/items'%></div>
 <div class="group">
   <%= @group.name %>
-  <div class="groupitems"></div>
+  <div class="groupitems">
+    
+  </div>
 </div>

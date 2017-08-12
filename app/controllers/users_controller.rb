@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @group = @user.group
+    @item = Item.new
+    @items = Item.where(user_id: current_user.id)
   end
   def create
     @user = User.new(user_params)
