@@ -17,17 +17,37 @@
   width: 300px;
   margin-left: 300px;
   
-} 
+}
+.tableo{
+  float: right;
+}
 .table{
   width: 400px;
   float: left;
   margin-right: 50px;
 }
+.right{
+  float: right;
+  cursor: pointer;
+  }
 .newy{
-  width: 300px;
+  width: 400px;
+  top: 0;
+  background-color: black;
+  color: white;
+  padding: 30px;
+  position: fixed;
+  z-index: 1;
   margin-left: 300px;
   display: none;
 }
-*{
-  magin: 0 auto;
+.pad{
+  margin-left: 50px;
 }
+.bty{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;}

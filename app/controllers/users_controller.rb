@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @group = @user.group
     @item = Item.new
-    @items = Item.where(user_id: current_user.id)
+    @items = Item.where(user_id: current_user.id, status: "not")
+    @items_monitor = Item.where(user_id: current_user.id, status: "monitor")
   end
   def create
     @user = User.new(user_params)
@@ -21,6 +22,11 @@ class UsersController < ApplicationController
       render 'new'
     end
     
+  end
+  def monitor
+    @item = Item.find(params[:id])
+    @group = current_user.group
+    @groupitem = Groupitem.create(name: @item.name,url: @item.url,item_id: @item.id, group_id: @group.id)
   end
 
   private 

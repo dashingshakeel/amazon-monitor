@@ -1,5 +1,5 @@
 <% provide(:title, @user.name) %>
-<div class="row">
+<div class="pad"><div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
@@ -9,11 +9,11 @@
     </section>
   </aside>
 </div>
-      <%= render 'shared/item_form' ,item: @item %>
+      <%= render 'shared/item_form' %>
       <div class="items"> <%= render 'shared/items'%></div>
-<div class="group">
-  <%= @group.name %>
+
   <div class="groupitems">
-    
+    <%= render 'shared/monitor_items'%>
   </div>
+
 </div>

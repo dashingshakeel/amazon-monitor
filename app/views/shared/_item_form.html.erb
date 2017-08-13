@@ -1,7 +1,10 @@
 <button class="bty"> Add Url</button>
+<%= render 'shared/error_item' %>
 <div class="newy">
   <div class="col-md-6-col-md-offset-3">
-    <%= form_for(item, url: item_path) do |f| %>
+    <%= form_for(@item, url: item_path) do |f| %>
+      <p class="right">x</p>
+    
       <%= f.label :name %>
       <%= f.text_field :name , class: 'form-control' %>
 
@@ -19,5 +22,8 @@
 <script type="text/javascript">
   $('.bty').on('click',function () {
     $('.newy').slideDown();
+  });
+  $('.right').on('click',function () {
+    $('.newy').slideUp();
   });
 </script>

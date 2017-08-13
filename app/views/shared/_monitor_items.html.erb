@@ -1,6 +1,4 @@
 
-<h1>Items</h1>
-
 <table class="table">
   <thead>
     <tr>
@@ -11,17 +9,16 @@
   </thead>
 
   <tbody>
-    <% @items.each do |item| %>
+    <% @items_monitor.each do |item| %>
       <tr>
         <td><%= item.name %></td>
         <td><%= item.url %></td>
        <td><%= form_tag item_path(item), method: :put do -%>
-        <%= hidden_field_tag :status, :value => "monitor"-%>
-        <%= submit_tag 'Add To monitor' -%>
-      <%- end -%></td> 
-
+          <%= hidden_field_tag :status => "not" -%>
+          <%= submit_tag 'Remove From monitor' -%>
+        ``<%- end -%></td> 
         <td><%= link_to 'Destroy', {:controller => "users",
-          :action => "monitor"},method: 'put' %></td>
+          :action => "not"},method: 'put'  %></td>
       </tr>
     <% end %>
   </tbody>
