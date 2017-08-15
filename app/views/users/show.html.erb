@@ -9,7 +9,12 @@
       </h1>
     </section>
   </aside>
-  <div class="computer"><a href="/groupitems"><%= image_tag("computer.png",:alt => "feed", class: "computer") %><p><%=current_user.group.groupitems.count %></p> </a></div>
+  <div class="computer"><a href="/groupitems"><%= image_tag("computer.png",:alt => "feed", class: "computer") %><p>
+    <% if current_user %>
+      <%=current_user.group.groupitems.count %>
+    <% end %>
+    
+  </p> </a></div>
 </div>
       <%= render 'shared/item_form' %>
       <div class="items"> <%= render 'shared/items'%></div>

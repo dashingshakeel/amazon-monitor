@@ -16,5 +16,22 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
+  require "net/http"
+  require 'open-uri'
+  require "nokogiri"
+
+require "./"+ File.dirname(__FILE__) + "/environment.rb"
+set :output, "#{path}/log/cron.log" #logs
 
 # Learn more: http://github.com/javan/whenever
+every 1.minute do
+
+    runner "Groupitems.all"
+    each do |gi|
+      doc = Nokogiri::HTML(open(gi.url))
+      doc.css('.totalReviewCount').each do |link| 
+        puts a = link.content
+        gi.log.update(reply: a)
+      end
+    end
+end
