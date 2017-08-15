@@ -13,6 +13,44 @@
  *= require_tree .
  *= require_self
  */
+ .gravatar{
+  border-radius: 50px;
+  float: left;
+  margin-left: 20px;
+ }
+.name{
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888888;
+  padding: 10px;
+  width: 150px;
+}
+ .computer p{
+  float: left;
+  background-color: red;
+  border-radius: 20px;
+  color: white;
+  margin-left: 40px;
+  text-align: center;
+  margin-top: -57px;
+  padding: 3px;
+ }
+ .computer{
+  width: 100px;
+  height: 70px;
+  float: left;
+  margin-top: 20px;
+ }
+ .add{
+  background-color: #04AEDA;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+ }
+
 .new{
   width: 300px;
   margin-left: 300px;
@@ -21,11 +59,7 @@
 .tableo{
   float: right;
 }
-.table{
-  width: 400px;
-  float: left;
-  margin-right: 50px;
-}
+
 .right{
   float: right;
   cursor: pointer;

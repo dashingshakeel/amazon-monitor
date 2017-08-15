@@ -8,5 +8,6 @@ class CreateGroupitems < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+     add_index :groupitems, :id
   end
 end

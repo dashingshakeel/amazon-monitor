@@ -3,17 +3,16 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+      <div class="gravatar">
+       <%= gravatar_for @user%></div><div class="name">
+        <%= @user.name %></div>
       </h1>
     </section>
   </aside>
+  <div class="computer"><a href="/groupitems"><%= image_tag("computer.png",:alt => "feed", class: "computer") %><p><%=current_user.group.groupitems.count %></p> </a></div>
 </div>
       <%= render 'shared/item_form' %>
       <div class="items"> <%= render 'shared/items'%></div>
 
-  <div class="groupitems">
-    <%= render 'shared/monitor_items'%>
-  </div>
 
 </div>

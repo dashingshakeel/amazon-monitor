@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @group = @user.group
     @item = Item.new
-    @items = Item.where(user_id: current_user.id, status: "not")
+    @items = Item.where(user_id: current_user.id)
     @items_monitor = Item.where(user_id: current_user.id, status: "monitor")
   end
   def create
@@ -25,8 +25,15 @@ class UsersController < ApplicationController
   end
   def monitor
     @item = Item.find(params[:id])
+    
     @group = current_user.group
-    @groupitem = Groupitem.create(name: @item.name,url: @item.url,item_id: @item.id, group_id: @group.id)
+    @groupitem = Groupitem.new(name: @item.name,url: @item.url,item_id: @item.id, group_id: @group.id)
+    if @groupitem.save
+      @item.status = "monitor"
+      @item.save
+      HttpJob.perform_later(@groupitem.url,@groupitem.id)
+    end
+    redirect_to current_user
   end
 
   private 
